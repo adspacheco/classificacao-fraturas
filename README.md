@@ -51,13 +51,13 @@ O conjunto de dados de imagem contém 10 diferentes tipos de fraturas
 
 ## Total de Arquivos
 
-- Avulsion fracture - Train: 109, Test: 14, Total: 123
-- Comminuted fracture - Train: 134, Test: 14, Total: 148 
-- Fracture Dislocation - Train: 137, Test: 19, Total: 156
-- Greenstick fracture - Train: 106, Test: 16, Total: 122 
-- Hairline Fracture - Train: 101, Test: 10, Total: 111   
-- Impacted fracture - Train: 75, Test: 9, Total: 84      
-- Longitudinal fracture - Train: 68, Test: 12, Total: 80 
-- Oblique fracture - Train: 69, Test: 16, Total: 85
-- Pathological fracture - Train: 116, Test: 18, Total: 134
-- Spiral Fracture - Train: 74, Test: 12, Total: 86
+- Avulsion fracture - Train: 109, Test: 14, Total: 123, Proportion Train: 88.62%, Proportion Test: 11.38%
+- Comminuted fracture - Train: 134, Test: 14, Total: 148, Proportion Train: 90.54%, Proportion Test: 9.46%
+- Fracture Dislocation - Train: 137, Test: 19, Total: 156, Proportion Train: 87.82%, Proportion Test: 12.18%
+- Greenstick fracture - Train: 106, Test: 16, Total: 122, Proportion Train: 86.89%, Proportion Test: 13.11%
+- Hairline Fracture - Train: 101, Test: 10, Total: 111, Proportion Train: 90.99%, Proportion Test: 9.01%
+- Impacted fracture - Train: 75, Test: 9, Total: 84, Proportion Train: 89.29%, Proportion Test: 10.71%
+- Longitudinal fracture - Train: 68, Test: 12, Total: 80, Proportion Train: 85.00%, Proportion Test: 15.00%
+- Oblique fracture - Train: 69, Test: 16, Total: 85, Proportion Train: 81.18%, Proportion Test: 18.82%
+- Pathological fracture - Train: 116, Test: 18, Total: 134, Proportion Train: 86.57%, Proportion Test: 13.43%
+- Spiral Fracture - Train: 74, Test: 12, Total: 86, Proportion Train: 86.05%, Proportion Test: 13.95%
