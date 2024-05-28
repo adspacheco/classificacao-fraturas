@@ -5,6 +5,8 @@ Problema: Construir um modelo de Deep Learning utilizando as técnicas aprendida
 
 Dados: Pasta com os datasets: classificacao-imagem-tipos-fraturas-ossos-imagens-raio-x
 
+## Geral
+
 O conjunto de dados de imagem contém 10 diferentes tipos de fraturas
 
 - Avulsion fracture
@@ -27,3 +29,22 @@ O conjunto de dados de imagem contém 10 diferentes tipos de fraturas
   - Fratura patológica: osso quebra devido a uma doença, como câncer ou osteoporose.
 - Spiral Fracture
   - Fratura espiral: osso quebra em espiral ao redor do eixo do osso, geralmente por uma torção.
+
+
+## Classificaçäo
+
+### Fraturas Menos Graves
+Fratura por estresse (Hairline Fracture): fratura fina no osso, como uma rachadura, mas o osso não se separa completamente.
+Fratura em galho verde (Greenstick Fracture): osso quebra parcialmente, mas não se separa completamente, como um galho jovem e flexível.
+Fratura longitudinal (Longitudinal Fracture): osso quebra ao longo do seu comprimento.
+Fratura oblíqua (Oblique Fracture): osso quebra em um ângulo.
+Fratura impactada (Impacted Fracture): quando partes do osso quebrado se empurram uma contra a outra.
+
+### Fraturas Moderadamente Graves
+Fratura por entorse (Avulsion Fracture): um pedaço do osso duro se solta onde um ligamento ou tendão está preso, geralmente por um puxão forte em jovens ou por osteoporose em idosos.
+Fratura espiral (Spiral Fracture): osso quebra em espiral ao redor do eixo do osso, geralmente por uma torção.
+Fratura-luxação (Fracture Dislocation): fratura perto de uma articulação, que também faz a articulação se deslocar.
+
+### Fraturas Mais Graves
+Fraturas Cominutivas (Comminuted Fracture): fratura na qual o osso é estilhaçado ou esmagado em inúmeros pedaços.
+Fratura patológica (Pathological Fracture): osso quebra devido a uma doença, como câncer ou osteoporose.
