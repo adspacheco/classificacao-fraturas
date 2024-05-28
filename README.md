@@ -48,3 +48,16 @@ O conjunto de dados de imagem contém 10 diferentes tipos de fraturas
 ### Fraturas Mais Graves
 - Fraturas Cominutivas (Comminuted Fracture): fratura na qual o osso é estilhaçado ou esmagado em inúmeros pedaços.
 - Fratura patológica (Pathological Fracture): osso quebra devido a uma doença, como câncer ou osteoporose.
+
+## Total de Arquivos
+
+Avulsion fracture - Train: 109, Test: 14, Total: 123
+Comminuted fracture - Train: 134, Test: 14, Total: 148 
+Fracture Dislocation - Train: 137, Test: 19, Total: 156
+Greenstick fracture - Train: 106, Test: 16, Total: 122 
+Hairline Fracture - Train: 101, Test: 10, Total: 111   
+Impacted fracture - Train: 75, Test: 9, Total: 84      
+Longitudinal fracture - Train: 68, Test: 12, Total: 80 
+Oblique fracture - Train: 69, Test: 16, Total: 85
+Pathological fracture - Train: 116, Test: 18, Total: 134
+Spiral Fracture - Train: 74, Test: 12, Total: 86
