@@ -87,11 +87,9 @@ Total Mais Graves - Train: 570, Test: 77, Total: 647
 1) Identificar fratura grave (Sim/Não) - Binário
 
 2) Dentro do grupo da fratura identificar qual tipo de fratura - Multiclass
-  2.1) Modelo para Não Grave (5 classes)
-  2.2) Modelo para Grave (5 classes)
-
-  ou
-
-  2.3) Modelo Multiclass com todas as classes
+  - 3) Modelo para Não Grave (5 classes)
+  - 4) Modelo para Grave (5 classes)
+ 
+    - ou 5) Modelo Multiclass com todas as classes (10 classes)
 
 Avaliar métricas (acurácia, tempo de processamento) de cada modelo e justificar a escolha de um deles para utilização.
