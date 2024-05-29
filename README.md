@@ -61,3 +61,37 @@ O conjunto de dados de imagem contém 10 diferentes tipos de fraturas
 - Oblique fracture - Train: 69, Test: 16, Total: 85, Proportion Train: 81.18%, Proportion Test: 18.82%
 - Pathological fracture - Train: 116, Test: 18, Total: 134, Proportion Train: 86.57%, Proportion Test: 13.43%
 - Spiral Fracture - Train: 74, Test: 12, Total: 86, Proportion Train: 86.05%, Proportion Test: 13.95%
+
+## Problema
+
+### Premissa - Fratura Grave (Sim/Não)
+
+### Fratura Não Grave
+- Fratura por estresse (Hairline Fracture): fratura fina no osso, como uma rachadura, mas o osso não se separa completamente.
+- Fratura em galho verde (Greenstick Fracture): osso quebra parcialmente, mas não se separa completamente, como um galho jovem e flexível.
+- Fratura longitudinal (Longitudinal Fracture): osso quebra ao longo do seu comprimento.
+- Fratura oblíqua (Oblique Fracture): osso quebra em um ângulo.
+- Fratura impactada (Impacted Fracture): quando partes do osso quebrado se empurram uma contra a outra.
+Total Menos Graves - Train: 419, Test: 63, Total: 482
+
+### Fraturas Grave
+- Fratura por entorse (Avulsion Fracture): um pedaço do osso duro se solta onde um ligamento ou tendão está preso, geralmente por um puxão forte em jovens ou por osteoporose em idosos.
+- Fratura espiral (Spiral Fracture): osso quebra em espiral ao redor do eixo do osso, geralmente por uma torção.
+- Fratura-luxação (Fracture Dislocation): fratura perto de uma articulação, que também faz a articulação se deslocar.
+- Fraturas Cominutivas (Comminuted Fracture): fratura na qual o osso é estilhaçado ou esmagado em inúmeros pedaços.
+- Fratura patológica (Pathological Fracture): osso quebra devido a uma doença, como câncer ou osteoporose.
+Total Mais Graves - Train: 570, Test: 77, Total: 647
+
+### Propostas
+
+1) Identificar fratura grave (Sim/Não) - Binário
+
+2) Dentro do grupo da fratura identificar qual tipo de fratura - Multiclass
+  2.1) Modelo para Não Grave (5 classes)
+  2.2) Modelo para Grave (5 classes)
+
+  ou
+
+  2.3) Modelo Multiclass com todas as classes
+
+Avaliar métricas (acurácia, tempo de processamento) de cada modelo e justificar a escolha de um deles para utilização.
