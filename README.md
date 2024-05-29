@@ -66,6 +66,8 @@ O conjunto de dados de imagem contém 10 diferentes tipos de fraturas
 
 ### Premissa - Fratura Grave (Sim/Não)
 
+#### Osso se separou do corpo ou não
+
 ### Fratura Não Grave
 - Fratura por estresse (Hairline Fracture): fratura fina no osso, como uma rachadura, mas o osso não se separa completamente.
 - Fratura em galho verde (Greenstick Fracture): osso quebra parcialmente, mas não se separa completamente, como um galho jovem e flexível.
