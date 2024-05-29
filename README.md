@@ -94,4 +94,4 @@ Total Mais Graves - Train: 570, Test: 77, Total: 647
  
     - ou 5) Modelo Multiclass com todas as classes (10 classes)
 
-Avaliar métricas (acurácia, tempo de processamento) de cada modelo e justificar a escolha de um deles para utilização.
+Avaliar métricas (acurácia, tempo de processamento) de cada modelo e justificar a escolha de um deles para utilização. Se 2 modelos multiclass para identificar o tipo entre não grave e grave. Ou 1 modelo para classificar o tipo de fratura dentre as 10 classes.
