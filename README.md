@@ -66,7 +66,7 @@ O conjunto de dados de imagem contém 10 diferentes tipos de fraturas
 
 ### Premissa - Fratura Grave (Sim/Não)
 
-#### Osso se separou do corpo ou não
+#### Osso se deslocou ou separou com a fratura ou não
 
 ### Fratura Não Grave
 - Fratura por estresse (Hairline Fracture): fratura fina no osso, como uma rachadura, mas o osso não se separa completamente.
@@ -88,10 +88,10 @@ Total Mais Graves - Train: 570, Test: 77, Total: 647
 
 1) Identificar fratura grave (Sim/Não) - Binário
 
-2) Dentro do grupo da fratura identificar qual tipo de fratura - Multiclass
-  - 3) Modelo para Não Grave (5 classes)
-  - 4) Modelo para Grave (5 classes)
+Dentro dos grupos de fraturas (nao grave ou grave) identificar qual tipo de fratura - Multiclass
+  - 2) Modelo para Não Grave (5 classes)
+  - 3) Modelo para Grave (5 classes)
  
-    - ou 5) Modelo Multiclass com todas as classes (10 classes)
+    - ou 4) Modelo Multiclass com todas as classes (10 classes)
 
-Avaliar métricas (acurácia, tempo de processamento) de cada modelo e justificar a escolha de um deles para utilização.
+Avaliar métricas (acurácia, tempo de processamento, recall) de cada modelo e justificar a escolha de um deles para utilização.
