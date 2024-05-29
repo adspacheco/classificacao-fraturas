@@ -88,10 +88,19 @@ Total Mais Graves - Train: 570, Test: 77, Total: 647
 
 1) Identificar fratura grave (Sim/Não) - Binário
 
-2) Dentro do grupo da fratura identificar qual tipo de fratura - Multiclass
+2) Dentro do grupo da fratura identificar qual tipo de fratura - multilabel
   - 3) Modelo para Não Grave (5 classes)
   - 4) Modelo para Grave (5 classes)
  
-    - ou 5) Modelo Multiclass com todas as classes (10 classes)
+    - ou 5) Modelo multilabel com todas as classes (10 classes)
 
-Avaliar métricas (acurácia, tempo de processamento) de cada modelo e justificar a escolha de um deles para utilização. Se 2 modelos multiclass para identificar o tipo entre não grave e grave. Ou 1 modelo para classificar o tipo de fratura dentre as 10 classes.
+Avaliar métricas (acurácia, tempo de processamento) de cada modelo e justificar a escolha de um deles para utilização. Se 2 modelos multilabel para identificar o tipo entre não grave e grave. Ou 1 modelo para classificar o tipo de fratura dentre as 10 classes.
+
+### Considerações do Professor
+
+- Seguir apenas no binário grave sim/não
+- Justificativa do "osso se separou do corpo ou não" está ok, no ponto de vista negocial
+- Além disso, o objetivo da classificação é importante. Trazer notícias que embasem essa escolha também. P.ex, priorizar atendimento de fratura grave.
+- Primeiro modelo multilabel com todas as fraturas para ter uma justificativa técnica também
+  - Alguns tipos de fraturas vai ser possível verificar as métricas com dificuldade na classificação, p.ex.
+- Classificar em grave ou não, com essas considerações de negócio e técnica, está ok. Classificar o tipo de fratura dentro do grave ou não é uma complexidade e entregar apenas se for como EXTRA.
