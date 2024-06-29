@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import random
 from keras.utils import img_to_array, load_img
+import numpy as np
 
 def validate_and_list_files(base_path):
     all_dirs = os.listdir(base_path)
