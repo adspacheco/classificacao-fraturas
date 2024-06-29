@@ -1,3 +1,8 @@
+import os
+import matplotlib.pyplot as plt
+from PIL import Image
+import random
+
 def validate_and_list_files(base_path):
     all_dirs = os.listdir(base_path)
     all_have_train_test = True
