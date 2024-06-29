@@ -4,6 +4,7 @@ from PIL import Image
 import random
 from keras.utils import img_to_array, load_img
 import numpy as np
+from tqdm import tqdm
 
 def validate_and_list_files(base_path):
     all_dirs = os.listdir(base_path)
@@ -175,3 +176,29 @@ def load_obj(full_path):
         return obj
     except Exception as e:
         print(e)
+
+def process_images(df, new_imgs_size):
+    imgs_train = []
+    targets_train = []
+    imgs_test = []
+    targets_test = []
+
+    for line in df.itertuples():
+        if line.type_dataset == 'train':
+            aux_array = resize_convert_to_array(line.full_path, new_imgs_size)
+            if len(aux_array) == 0:
+                df.loc[line.Index, 'img_processada'] = False
+            else:
+                imgs_train.append(aux_array)
+                targets_train.append(line.target)
+                df.loc[line.Index, 'img_processada'] = True
+        elif line.type_dataset == 'test':
+            aux_array = resize_convert_to_array(line.full_path, new_imgs_size)
+            if len(aux_array) == 0:
+                df.loc[line.Index, 'img_processada'] = False
+            else:
+                imgs_test.append(aux_array)
+                targets_test.append(line.target)
+                df.loc[line.Index, 'img_processada'] = True
+
+    return imgs_train, targets_train, imgs_test, targets_test
