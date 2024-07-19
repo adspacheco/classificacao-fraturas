@@ -1,6 +1,7 @@
 import os
 import matplotlib.pyplot as plt
-from PIL import Image
+from PIL import Image, ImageEnhance, ImageOps
+import shutil
 import random
 from keras.utils import img_to_array, load_img
 import numpy as np
@@ -258,3 +259,68 @@ def plot_images_with_titles(df, rows=2, cols=2, figsize=(8, 8)):
             ax.axis('off') 
 
     plt.show()
+
+def random_transform(image):
+    if random.random() > 0.5:
+        angle = random.randint(-30, 30)
+        image = image.rotate(angle)
+
+    if random.random() > 0.5:
+        image = ImageOps.mirror(image)
+
+    if random.random() > 0.5:
+        image = ImageOps.flip(image)
+    return image
+
+def save_augmented_images(img_path, class_label, count):
+    img = Image.open(img_path) 
+
+    save_to_dir = os.path.join(AUG_DIR_PATH, class_label)
+    os.makedirs(save_to_dir, exist_ok=True)
+
+    prefix = os.path.splitext(os.path.basename(img_path))[0]
+
+    for i in range(count):
+        augmented_img = random_transform(img)
+        augmented_img.save(os.path.join(save_to_dir, f"{prefix}_aug_{i}.jpg"))
+
+def count_files_in_directory(base_path, classes):
+    counts = {'train': {}, 'test': {}}
+    for split in ['train', 'test']:
+        for cls in classes:
+            dir_path = os.path.join(base_path, split, cls)
+            if os.path.exists(dir_path):
+                counts[split][cls] = len(os.listdir(dir_path))
+            else:
+                counts[split][cls] = 0
+    return counts
+
+def random_transform(image):
+    if random.random() > 0.5:
+        angle = random.randint(-30, 30)
+        image = image.rotate(angle)
+
+    if random.random() > 0.5:
+        image = ImageOps.mirror(image)
+
+    if random.random() > 0.5:
+        image = ImageOps.flip(image)
+    return image
+
+def save_augmented_images(img_path, class_label, count, start_index):
+    img = Image.open(img_path)
+
+    save_to_dir = os.path.join(AUG_BASE_PATH, 'train', class_label)
+    os.makedirs(save_to_dir, exist_ok=True)
+
+    prefix = os.path.splitext(os.path.basename(img_path))[0]
+
+    for i in range(count):
+        augmented_img = random_transform(img)
+        augmented_img.save(os.path.join(save_to_dir, f"AUG_{prefix}_{start_index + i}.jpg"))
+
+def copy_files(src_dir, dest_dir):
+    for file_name in os.listdir(src_dir):
+        full_file_name = os.path.join(src_dir, file_name)
+        if os.path.isfile(full_file_name):
+            shutil.copy(full_file_name, dest_dir)
