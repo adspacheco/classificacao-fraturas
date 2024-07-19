@@ -5,6 +5,8 @@ import random
 from keras.utils import img_to_array, load_img
 import numpy as np
 from tqdm import tqdm
+from keras_visualizer import visualizer
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 def validate_and_list_files(base_path):
     all_dirs = os.listdir(base_path)
@@ -202,3 +204,44 @@ def process_images(df, new_imgs_size):
                 df.loc[line.Index, 'img_processada'] = True
 
     return imgs_train, targets_train, imgs_test, targets_test
+
+def plot_nn(model, settings={}):
+    visualizer(model, file_name='/tmp/output', file_format='png', view=True, settings=settings)
+    img = Image.open('/tmp/output.png')
+    return img
+
+def plot_history(history):
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+
+    ax1.plot(history.history['loss'], 'r-', label='train loss')
+    ax1.plot(history.history['val_loss'], 'b--', label='test loss')
+    ax1.set_title('Model Loss')
+    ax1.set_xlabel('Epochs')
+    ax1.set_ylabel('Loss')
+
+    ax1.legend()
+
+    ax2.plot(history.history['accuracy'], 'r-', label='train acc')
+    ax2.plot(history.history['val_accuracy'], 'b--', label='test acc')
+    ax2.set_title('Model Accuracy')
+    ax2.set_xlabel('Epochs')
+    ax2.set_ylabel('Accuracy')
+    ax2.legend()
+
+    plt.tight_layout()
+
+def plot_confusion_matrix_with_sums(true_labels, predicted_labels, figsize=(10, 7), cmap='viridis', text_color='blue'):
+    cm = confusion_matrix(true_labels, predicted_labels)
+    sum_per_class = np.sum(cm, axis=1)
+
+    fig, ax = plt.subplots(figsize=figsize)
+
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=np.unique(true_labels))
+    disp.plot(ax=ax, cmap=cmap, xticks_rotation=45)
+
+    for i, total in enumerate(sum_per_class):
+        ax.text(len(disp.display_labels)-0.5, i, f'{total}', va='center', ha='left', fontsize=12, color=text_color)
+
+    plt.xticks(rotation=45, ha='right')
+
+    plt.show()
