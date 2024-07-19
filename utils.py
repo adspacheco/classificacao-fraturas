@@ -307,10 +307,10 @@ def random_transform(image):
         image = ImageOps.flip(image)
     return image
 
-def save_augmented_images(img_path, class_label, count, start_index):
+def save_augmented_images(img_path, class_label, count, start_index, aug_base_path):
     img = Image.open(img_path)
 
-    save_to_dir = os.path.join(AUG_BASE_PATH, 'train', class_label)
+    save_to_dir = os.path.join(aug_base_path, 'train', class_label)
     os.makedirs(save_to_dir, exist_ok=True)
 
     prefix = os.path.splitext(os.path.basename(img_path))[0]
