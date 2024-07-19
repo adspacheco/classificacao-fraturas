@@ -295,6 +295,17 @@ def count_files_in_directory(base_path, classes):
                 counts[split][cls] = 0
     return counts
 
+def count_files_in_final_directory(base_path, classes):
+    counts = {'train': {}, 'test': {}}
+    for split in ['train', 'test']:
+        for cls in classes:
+            dir_path = os.path.join(base_path, cls, split)
+            if os.path.exists(dir_path):
+                counts[split][cls] = len(os.listdir(dir_path))
+            else:
+                counts[split][cls] = 0
+    return counts
+
 def random_transform(image):
     if random.random() > 0.5:
         angle = random.randint(-30, 30)
