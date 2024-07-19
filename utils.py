@@ -245,3 +245,16 @@ def plot_confusion_matrix_with_sums(true_labels, predicted_labels, figsize=(10, 
     plt.xticks(rotation=45, ha='right')
 
     plt.show()
+
+def plot_images_with_titles(df, rows=2, cols=2, figsize=(8, 8)):
+    fig, axes = plt.subplots(rows, cols, figsize=figsize)
+    fig.subplots_adjust(hspace=0.4, wspace=0.4)
+
+    for i, ax in enumerate(axes.flat):
+        if i < len(df):
+            img = plt.imread(df.full_path.iloc[i])
+            ax.imshow(img, cmap='gray')
+            ax.set_title(f'{df.target.iloc[i]} | Pred: {df.predicted_class.iloc[i]} ({df.target_proba.iloc[i]:.3f})')
+            ax.axis('off') 
+
+    plt.show()
