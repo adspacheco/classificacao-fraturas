@@ -261,15 +261,19 @@ def plot_images_with_titles(df, rows=2, cols=2, figsize=(8, 8)):
     plt.show()
 
 def random_transform(image):
-    if random.random() > 0.5:
-        angle = random.randint(-30, 30)
-        image = image.rotate(angle)
+    #if random.random() > 0.5:
+        #angle = random.randint(-30, 30)
+        #image = image.rotate(angle)
 
-    if random.random() > 0.5:
-        image = ImageOps.mirror(image)
+    #if random.random() > 0.5:
+        #image = ImageOps.mirror(image)
 
-    if random.random() > 0.5:
-        image = ImageOps.flip(image)
+    #if random.random() > 0.5:
+        #image = ImageOps.flip(image)
+    enhancer = ImageEnhance.Contrast(image)
+    #factor = random.uniform(0.75, 1.5)  # Fator de contraste
+    image = enhancer.enhance(3)
+    
     return image
 
 def save_augmented_images(img_path, class_label, count):
